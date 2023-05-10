@@ -4,13 +4,13 @@ import { Canvas } from '@react-three/fiber';
 import Floor from '@/components/devtut/Floor';
 import Box from '@/components/devtut/Box';
 import LightBulb from '@/components/devtut/LightBulb';
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, TransformControls } from "@react-three/drei";
 
 
 
 export default function Three() {
     return (
-      <main className="w-screen h-screen">
+      <section className="w-screen h-screen">
         <Canvas
             shadows
             className="bg-black"
@@ -22,6 +22,6 @@ export default function Three() {
             <OrbitControls />
             <Box position={[1, 4, 2]} rotation={[90, 0, 0]}/>
         </Canvas>
-      </main>
+      </section>
     )
   }
