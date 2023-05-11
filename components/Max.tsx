@@ -16,7 +16,7 @@ export default function Max() {
     let gain: any;
 
     const setup = async () => {
-        let patcher = await fetch("rnbo/patch.export.json").then((res) => res.json());
+        let patcher = await fetch("rnbo/pitchslide/patch.export.json").then((res) => res.json());
 
         device = await createDevice({ context, patcher });
 

@@ -1,8 +1,18 @@
 'use client';
 import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
+import { CubeCamera, Environment, OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import { Ground } from '@/components/cartut/Ground';
+import { Car } from '@/components/cartut/Car';
+import { Rings } from '@/components/cartut/Rings';
+import { Boxes } from '@/components/cartut/Boxes';
+import {
+    EffectComposer,
+    DepthOfField,
+    Bloom,
+    ChromaticAberration,
+  } from "@react-three/postprocessing";
+import { BlendFunction } from "postprocessing";
 
 function CarShow() {
     return (
@@ -17,6 +27,19 @@ function CarShow() {
             </mesh> */}
             // attach specified color to background
             <color args={[0, 0, 0]} attach="background" />
+
+            {/* <Car /> */}
+            <CubeCamera resolution={256} frames={Infinity}>
+                {(tex) => (
+                    <>
+                        <Environment map={tex} />
+                        <Car />
+                    </>
+                )}
+            </CubeCamera>
+            
+            <Rings />
+            <Boxes />
 
             <spotLight
                 color={[1, 0.25, 0.7]}
