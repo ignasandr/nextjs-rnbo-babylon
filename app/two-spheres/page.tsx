@@ -9,8 +9,8 @@ export default function Five() {
         <Canvas>
             <ambientLight />
             <pointLight position={[10, 10, 10]} />
-            <Sphere position={[-1.6, 0, 0]} userData-color={'red'}/>
-            <Sphere position={[1.6, 0, 0]} userData-color={'blue'}/>
+            <Sphere position={[-1.6, 0, 0]} userData-color={'hotpink'}/>
+            <Sphere position={[1.6, 0, 0]} userData-color={'cyan'}/>
         </Canvas>
     </section>
   )
