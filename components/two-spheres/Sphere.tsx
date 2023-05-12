@@ -11,8 +11,9 @@ export function Sphere(props: ThreeElements['mesh']) {
   const [active, setActive] = useState(false)
 
   useEffect(() => {
-
-  }, []);
+    document.body.style.cursor = hovered ? 'pointer' : 'auto'
+    return () => {document.body.style.cursor = 'auto'}
+  }, [hovered]);
   // Subscribe this component to the render-loop, rotate the mesh every frame
   useFrame((state, delta) => {
     if (active) {
